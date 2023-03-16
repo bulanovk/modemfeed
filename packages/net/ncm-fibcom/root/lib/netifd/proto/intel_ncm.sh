@@ -75,6 +75,7 @@ cellular_() {
   proto_add_ipv4_address "$(echo ${IPADDR})" "255.255.255.0"
   proto_add_ipv4_route "0.0.0.0" 0 "$GATEWAY" "" 10
   proto_send_update "$interface"
+  proto_add_dns_server "$DNS"
   proto_add_dynamic_defaults
   ip link set dev $dev arp off
 }
