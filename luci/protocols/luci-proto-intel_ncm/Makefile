@@ -11,6 +11,6 @@ LUCI_DESCRIPTION:=Provides Web UI for Intel NCM protocol/interface.
 #LUCI_DEPENDS:=+nebula +nebula-proto
 LUCI_PKGARCH:=all
 
-include ../../luci.mk
+include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
