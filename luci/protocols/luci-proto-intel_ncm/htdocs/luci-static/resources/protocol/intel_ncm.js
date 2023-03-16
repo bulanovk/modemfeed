@@ -37,7 +37,8 @@ return network.registerProtocol('intel_ncm', {
 	renderFormOptions: function (s) {
 		var o;
 
-		o = s.taboption('general', form.Value, 'config_file', _('Config File'), _('Required. Path to the .yml config file for this interface.'));
+		o = s.taboption('general', form.Value, 'apn', _('APB'), _('Required. APN name'));
+        o = s.taboption('general', form.Value, 'device', _('Modem Port'), _('Required. AT Serial port of Intel Modem to perform communication'));
 		o.rmempty = false;
 
 	},
