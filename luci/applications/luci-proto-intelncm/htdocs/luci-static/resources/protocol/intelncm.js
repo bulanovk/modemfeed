@@ -15,7 +15,7 @@ return network.registerProtocol('intel_ncm', {
 	},
 
 	getOpkgPackage: function () {
-		return 'nebula';
+		return 'intel_ncm';
 	},
 
 	isFloating: function () {
