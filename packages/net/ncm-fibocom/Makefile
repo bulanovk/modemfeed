@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ncm-fibocom
-PKG_VERSION:=0.0.1
+PKG_VERSION:=0.0.1-1
 PKG_RELEASE:=4
 PKG_MAINTAINER:=bulanovk
 
@@ -26,6 +26,7 @@ define Build/Configure
 endef
 
 define Build/Compile
+  chmod +x ./root/lib/netifd/proto/intel_ncm.sh
 endef
 
 
