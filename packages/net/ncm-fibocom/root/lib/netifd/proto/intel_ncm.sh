@@ -54,12 +54,16 @@ cellular_() {
     logger -t "$NODE" "Failed to connect network"
     exit 0
   fi
+  proto_init_update "$dev" 1
+  proto_set_keep 1
+
   for d in $DNS; do
     if [ $(echo "$NS" | grep "$d") ]; then
       false
     else
       if [ "$d" != "0.0.0.0" ]; then
         NS="$NS $d"
+        proto_add_dns_server "${d}"
       fi
     fi
   done
@@ -70,11 +74,9 @@ cellular_() {
     logger -t "$NODE" "Failed to obtain IP-address"
     exit 0
   fi
-  proto_init_update "$dev" 1
-  proto_set_keep 1
   proto_add_ipv4_address "$(echo ${IPADDR})" "255.255.255.0"
   proto_add_ipv4_route "0.0.0.0" 0 "$GATEWAY" "" 10
-  proto_add_dns_server "8.8.8.8"
+
   proto_add_dynamic_defaults
   proto_send_update "$interface"
   ip link set dev $dev arp off
