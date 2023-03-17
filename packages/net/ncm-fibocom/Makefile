@@ -32,7 +32,7 @@ endef
 
 define Package/$(PKG_NAME)/install
 	$(CP) ./root/* $(1)/
-	chmod +x .$(1)/lib/netifd/proto/intel_ncm.sh
+	chmod +x $(1)/lib/netifd/proto/intel_ncm.sh
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
