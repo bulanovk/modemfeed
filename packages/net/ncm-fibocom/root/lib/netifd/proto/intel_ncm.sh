@@ -77,7 +77,7 @@ cellular_() {
   proto_add_ipv4_address "$(echo ${IPADDR})" "255.255.255.0"
   proto_add_ipv4_route "0.0.0.0" 0 "$GATEWAY" "" 10
   if [ -n "$DNS" ]; then
-    log "No DNS servers were provided by Network"
+    log "No DNS  servers were provided by Network"
   else
     proto_add_dns_server "8.8.8.8"
     proto_add_dns_server "1.1.1.1"
