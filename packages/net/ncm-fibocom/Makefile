@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ncm-fibocom
 PKG_VERSION:=0.0.2
-PKG_RELEASE:=10
+PKG_RELEASE:=11
 PKG_MAINTAINER:=bulanovk
 
 include $(INCLUDE_DIR)/package.mk
