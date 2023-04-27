@@ -4,7 +4,6 @@ opengt
  set senddelay 0.02
  waitquiet 0.2 0.2
 
- send "AT+CGACT=0,1^m"
  send "AT+CMEE=2^m"
  send "AT+COPS=0^m"
  send "AT+CGPIAF=1,0,0,0;+XDNS=1,1;+XDNS=1,2^m"

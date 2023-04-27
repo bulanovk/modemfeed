@@ -180,7 +180,7 @@ proto_intel_ncm_teardown() {
   stop_ $device
   log "Connection terminated"
   #  proto_init_update "*" 0
-  proto_send_update "$interface"
+  # proto_send_update "$interface"
 
 }
 
